@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mini project</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+  <div class="music-player">
+  <img src="image/tum hi ho.jpg" class="song-img">
+
+  <h1>Tum Hi Ho Song Aashiqui 2</h1>
+  <br>
+  <p> Arijit Singh</p>
+  <br>
+   
+  <audio controls id="song">
+    <source src="media/2c25-tum-hi-ho-hindi-song-remix-house-mix-sudarshan-beatz-384024.mp3" type="audio/mpeg">
+  </audio>
+  <br>
+  <br>
+
+   
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios" />
+<span class="material-symbols-outlined">
+  <br>
+    
+
+   <div class="controls">
+   <div><i class="fa-solid fa-backward"></i></div>
+   <div onclick="playpause()"><i class="fa-solid fa-circle-play" id="ctrlIcon"></i></div>
+   <div><i class="fa-solid fa-forward"></i></div>
+  </div>
+
+  <script>
+    let progress = document.getElementById("progress");
+    let Song= document.getElementById("song");
+    let ctrlIcon = document.getElementById ("ctrlIcon");
+
+
+    song.onloadedmetadata =function(){
+      progress.max =song.duration;
+      progress.value= song.currentTime;
+
+    }
+   
+    function playpause(){
+      if(ctrlIcon.classList.contains("fa-pause")){
+        song.pause();
+        ctrlIcon.classList.remove("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+
+
+      }
+      else{
+        song.play();
+         ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+      }
+    }
+
+
+
+  </script>
+
+
+
+  
+</span>
+  </div>
+
+  </div>
+</body>
+</html>
